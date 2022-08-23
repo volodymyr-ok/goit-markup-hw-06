@@ -792,7 +792,7 @@ address .contact {
 }
 
 .backdrop.is-hidden .modal {
-  transform: translate(-100%, -100%) rotate(360deg) scale(0);
+  transform: translate(100%, -100%) rotate(360deg) scale(0);
 
   /* transition-property: visibility, opacity, transform;
   transition-duration: 250ms;
@@ -807,6 +807,10 @@ address .contact {
   left: 50%;
   transform: translate(-50%, -50%);
 
+  display: flex;
+  flex-direction: column;
+
+  padding: 40px;
   width: 528px;
   min-height: 581px;
 
@@ -816,7 +820,7 @@ address .contact {
   transition: transform var(--transition);
 }
 
-.close-btn {
+.modal-close-button {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -829,14 +833,48 @@ address .contact {
   height: 30px;
 
   /* background-color: teal; */
+  fill: #000000;
   border-width: 1px;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.1);
   background-color: #fff;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .close-icon {
   width: 18px;
   height: 18px;
+}
+
+.modal-title {
+  /* font-weight: 700; */
+  font-size: 20px;
+  line-height: calc(23 / 20);
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.lable-title {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  color: var(--minor-color);
+}
+
+/* .input-comment {
+  resize: vertical;
+} */
+
+.input-area {
+  border-radius: 4px;
+}
+
+.modal-submit-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  cursor: pointer;
 }
