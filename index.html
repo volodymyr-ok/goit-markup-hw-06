@@ -594,18 +594,33 @@
     <!-- хххххххххххххххххххххххххх Модальне вікно -->
     <div data-modal class="backdrop is-hidden">
       <div class="modal">
-        <!-- <p class="modal-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque voluptas velit repudiandae
-          ullam ratione asperiores unde molestiae! Aut natus, omnis sequi perferendis reprehenderit
-          soluta aliquid pariatur corrupti deleniti, velit veniam, optio labore laudantium
-          dignissimos. Vero itaque dolor dicta fuga corrupti aliquam alias! Iure, sequi doloremque
-          pariatur at vero porro est?
-        </p> -->
-        <button data-modal-close type="button" class="close-btn">
+        <button data-modal-close type="button" class="modal-close-button">
           <svg class="close-icon">
             <use href="./images/icons.svg#close"></use>
           </svg>
         </button>
+          <!-- Залиште свої дані, ми вам передзвонимо -->
+          <h2 class="modal-title">Залиште свої дані, ми вам передзвонимо</h2>
+
+          <!-- Ім'я -->
+          <label for="name" class="lable-title">Ім'я</label>
+          <input type="text" name="name" id="name" class="input-area">
+
+          <!-- Пошта -->
+          <label for="email" class="lable-title">Пошта</label>
+          <input type="email" name="email" id="email" class="input-area">
+
+          <!-- Коментар -->
+          <label for="comment" class="lable-title">Коментар</label>
+          <input type="textarea" name="comment" id="comment" rows="4" placeholder="Введіть текст" class="input-area input-comment">
+
+          <!-- Погоджуюся з розсилкою та приймаю  Умови договору -->
+          <label>
+            <input type="checkbox">Погоджуюся з розсилкою та приймаю <a href="#">Умови договору</a>
+          </label>
+          <!-- Відправити -->
+          <button type="submit" class="modal-submit-button">Відправити</button>
+        </form>
       </div>
     </div>
 
