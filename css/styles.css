@@ -987,16 +987,20 @@ address .contact {
   outline: 1px solid var(--blue-accent);
 }
 
-/* .personal-box:focus .form-icon {
-  fill: var(--blue-accent);
-} */
-
 .form-icon {
   position: absolute;
   bottom: 12px;
   left: 12px;
   width: 18px;
   height: 18px;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--transition);
+}
+
+.personal-box:focus .form-icon {
+  fill: var(--blue-accent);
 }
 
 /* Коментар Comment */
