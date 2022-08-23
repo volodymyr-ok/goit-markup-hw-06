@@ -899,18 +899,37 @@ address .contact {
   height: 30px;
 
   /* background-color: teal; */
-  fill: #000000;
   border-width: 1px;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.1);
   background-color: #fff;
   border-radius: 50%;
   cursor: pointer;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--transition);
 }
 
 .close-icon {
   width: 18px;
   height: 18px;
+
+  fill: #000000;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--transition);
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+  background-color: #ffffff;
+}
+
+.modal-close-button:hover .close-icon,
+.modal-close-button:focus .close-icon {
+  fill: var(--blue-accent);
 }
 
 /* ------------------- Форми модалки ------------------- */
