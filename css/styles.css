@@ -765,6 +765,81 @@ address .contact {
   background-color: var(--blue-accent);
 }
 
+/* Підпишіться на розсилку */
+
+.third-footer-container {
+  margin-left: 93px;
+  margin-top: 12px;
+
+  width: 100%;
+}
+
+.subscribe-title {
+  margin-bottom: 20px;
+
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subscribe-field {
+  margin-right: 12px;
+  padding: 15px 16px;
+  width: 100%;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.subscribe-field::placeholder {
+  font-size: 16px;
+  line-height: calc(20 / 16);
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.subscribe-field:focus {
+  outline: 1px solid var(--blue-accent);
+}
+
+.subscribe-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 28px;
+  border-radius: 4px;
+  border: none;
+
+  background-color: var(--blue-accent);
+  color: #ffffff;
+
+  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--transition);
+}
+
+.subscribe-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.send-icon {
+  margin-left: 10px;
+  width: 24px;
+  height: 24px;
+
+  fill: #ffffff;
+}
+
 /* ----------------------Модальне вікно */
 
 .backdrop {
@@ -793,12 +868,6 @@ address .contact {
 
 .backdrop.is-hidden .modal {
   transform: translate(100%, -100%) rotate(360deg) scale(0);
-
-  /* transition-property: visibility, opacity, transform;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
-
-  /* transition: transform var(--transition), rotate var(--transition); */
 }
 
 .modal {
@@ -806,9 +875,6 @@ address .contact {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  /* display: flex;
-  flex-direction: column; */
 
   padding: 40px;
   width: 528px;
@@ -874,7 +940,7 @@ address .contact {
   margin-bottom: 10px;
 }
 
-.lable-title {
+.label-title {
   margin-bottom: 4px;
 
   font-weight: 400;
@@ -894,7 +960,6 @@ address .contact {
 
 .personal-box {
   padding: 11px 42px;
-  /* margin-bottom: 10px; */
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 }
@@ -924,7 +989,6 @@ address .contact {
 .comment-box {
   height: 120px;
   padding: 12px 16px;
-  /* margin-bottom: 20px; */
   resize: none;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
