@@ -838,6 +838,14 @@ address .contact {
   height: 24px;
 
   fill: #ffffff;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--transition);
+}
+
+.subscribe-button:hover .send-icon {
+  fill: var(--blue-accent);
 }
 
 /* ----------------------Модальне вікно */
@@ -981,6 +989,10 @@ address .contact {
   padding: 11px 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  transition-property: outline;
+  transition-duration: 250ms;
+  transition-timing-function: var(--transition);
 }
 
 .personal-box:focus {
@@ -999,7 +1011,7 @@ address .contact {
   transition-timing-function: var(--transition);
 }
 
-.personal-box:focus .form-icon {
+.personal-box:focus + .form-icon {
   fill: var(--blue-accent);
 }
 
