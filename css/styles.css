@@ -1041,6 +1041,8 @@ address .contact {
 
 .checkbox-wrap {
   margin-bottom: 30px;
+
+  user-select: none;
 }
 
 input[type='checkbox'] {
