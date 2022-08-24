@@ -23,7 +23,17 @@ body {
 
 /* Сховані заголовки */
 .visually-hidden {
-  display: none;
+  /* display: none; */
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  /* clip: rect(0 0 0 0); */
+  /* clip-path: inset(50%); */
+  margin: -1px;
 }
 
 .container {
@@ -765,7 +775,7 @@ address .contact {
   background-color: var(--blue-accent);
 }
 
-/* Підпишіться на розсилку */
+/* ---------- Підпишіться на розсилку ---------- */
 
 .third-footer-container {
   margin-left: 93px;
@@ -832,6 +842,33 @@ address .contact {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+@keyframes plane {
+  0% {
+    transform: translate(0);
+    rotate: 0deg;
+  }
+
+  25% {
+    transform: translate(100px, 100px);
+    rotate: -90deg;
+  }
+
+  50% {
+    transform: translate(100px, 100px);
+    rotate: -180deg;
+  }
+
+  75% {
+    transform: translate(20px, 85px);
+    rotate: -270deg;
+  }
+
+  100% {
+    transform: translate(0);
+    rotate: -360deg;
+  }
+}
+
 .send-icon {
   margin-left: 10px;
   width: 24px;
@@ -839,6 +876,7 @@ address .contact {
 
   fill: #ffffff;
 
+  transform-origin: center;
   transition-property: fill;
   transition-duration: 250ms;
   transition-timing-function: var(--transition);
@@ -846,6 +884,11 @@ address .contact {
 
 .subscribe-button:hover .send-icon {
   fill: var(--blue-accent);
+
+  animation-name: plane;
+  animation-duration: 750ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 
 /* ----------------------Модальне вікно */
@@ -940,12 +983,7 @@ address .contact {
   fill: var(--blue-accent);
 }
 
-/* ------------------- Форми модалки ------------------- */
-
-/* .modal-form {
-  display: flex;
-  flex-direction: column;
-} */
+/* ---------------- Форми модалки ---------------- */
 
 .modal-title {
   margin-bottom: 12px;
@@ -956,14 +994,14 @@ address .contact {
   letter-spacing: 0.03em;
 }
 
-.form-field {
+.form-wrap {
   position: relative;
 
   display: flex;
   flex-direction: column;
 }
 
-.form-field:not(:last-child) {
+.form-wrap:not(:last-child) {
   margin-bottom: 10px;
 }
 
@@ -977,48 +1015,57 @@ address .contact {
   color: var(--minor-color);
 }
 
-::placeholder {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: calc(14 / 12);
-  letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
+.input-wrap {
+  position: relative;
+
+  /* width: 100%; */
 }
 
-.personal-box {
+.input-field {
   padding: 11px 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  width: 100%;
 
   transition-property: outline;
   transition-duration: 250ms;
   transition-timing-function: var(--transition);
 }
 
-.personal-box:focus {
+.input-field:focus {
   outline: 1px solid var(--blue-accent);
 }
 
-.form-icon {
+.input-icon {
   position: absolute;
-  bottom: 12px;
+  bottom: 50%;
   left: 12px;
   width: 18px;
   height: 18px;
+
+  transform: translateY(50%);
 
   transition-property: fill;
   transition-duration: 250ms;
   transition-timing-function: var(--transition);
 }
 
-.personal-box:focus + .form-icon {
+.input-field:focus + .input-icon {
   fill: var(--blue-accent);
 }
 
 /* Коментар Comment */
 
-.form-field:nth-child(4) {
+.form-wrap:nth-child(4) {
   margin-bottom: 20px;
+}
+
+::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
 }
 
 .comment-box {
@@ -1032,7 +1079,6 @@ address .contact {
   transition-duration: 250ms;
   transition-timing-function: var(--transition);
 }
-
 .comment-box:focus {
   outline: 1px solid var(--blue-accent);
 }
@@ -1040,22 +1086,51 @@ address .contact {
 /* Чекбокс Checkbox */
 
 .checkbox-wrap {
+  text-align: center;
   margin-bottom: 30px;
 
   user-select: none;
 }
 
-input[type='checkbox'] {
-  margin: 0 7px 0 0;
-  /* outline: 1px solid var(--main-color); */
-}
-
-.checkbox-agreement {
+.checkbox-label {
   color: var(--minor-color);
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+}
+
+.checkbox-tick.visually-hidden {
+  transform: translate(10px, 20px);
+}
+
+.check-back {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-right: 7px;
+  width: 16px;
+  height: 15px;
+  border-radius: 2px;
+  border: 2px solid #000000;
+
+  background-color: transparent;
+}
+
+.checkbox-tick:checked + .check-back {
+  border-color: var(--blue-accent);
+  background-color: var(--blue-accent);
+}
+
+.checkbox-icon {
+  fill: transparent;
+  width: 13px;
+  height: 9px;
+}
+
+.checkbox-tick:checked + .check-back svg {
+  fill: #ffffff;
 }
 
 .checkbox-policy {
@@ -1065,6 +1140,8 @@ input[type='checkbox'] {
   letter-spacing: 0.03em;
   color: var(--blue-accent);
 }
+
+/* Submit button Кнопка підтвердження btn */
 
 .modal-submit-button {
   display: block;

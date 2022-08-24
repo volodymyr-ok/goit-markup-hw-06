@@ -627,34 +627,40 @@
 
         <form class="modal-form">
           <!-- xxxxxxxxxxxx Ім'я xxxxxxxxxxxx -->
-          <div class="form-field">
+          <div class="form-wrap">
             <label for="name" class="label-title">Ім'я</label>
-            <input type="text" name="name" id="name" class="personal-box" />
-            <svg class="form-icon person-icon">
-              <use href="./images/icons.svg#person"></use>
-            </svg>
+            <div class="input-wrap">
+              <input type="text" name="name" id="name" class="input-field" />
+              <svg class="input-icon person-icon">
+                <use href="./images/icons.svg#person"></use>
+              </svg>
+            </div>
           </div>
 
           <!-- xxxxxxxxxxxx Телефон xxxxxxxxxxxx -->
-          <div class="form-field">
+          <div class="form-wrap">
             <label for="tel" class="label-title">Телефон</label>
-            <input type="tel" name="tel" id="tel" class="personal-box" />
-            <svg class="form-icon">
-              <use href="./images/icons.svg#phone"></use>
-            </svg>
+            <div class="input-wrap">
+              <input type="tel" name="tel" id="tel" class="input-field" />
+              <svg class="input-icon">
+                <use href="./images/icons.svg#phone"></use>
+              </svg>
+            </div>
           </div>
 
           <!-- xxxxxxxxxxxx Пошта xxxxxxxxxxxx -->
-          <div class="form-field">
+          <div class="form-wrap">
             <label for="email" class="label-title">Пошта</label>
-            <input type="email" name="email" id="email" class="personal-box" />
-            <svg class="form-icon">
-              <use href="./images/icons.svg#email"></use>
-            </svg>
+            <div class="input-wrap">
+              <input type="email" name="email" id="email" class="input-field" />
+              <svg class="input-icon">
+                <use href="./images/icons.svg#email"></use>
+              </svg>
+            </div>
           </div>
 
           <!-- xxxxxxxxxxxx Коментар xxxxxxxxxxxx -->
-          <div class="form-field">
+          <div class="form-wrap">
             <label for="comment" class="label-title">Коментар</label>
             <textarea
               name="comment"
@@ -667,8 +673,19 @@
 
           <!-- Погоджуюся з розсилкою та приймаю  Умови договору -->
           <div class="checkbox-wrap">
-            <label for="policy" class="checkbox-agreement">
-              <input type="checkbox" name="policy" id="policy" class="checkbox-tick" required />
+            <label for="policy" class="checkbox-label">
+              <input
+                type="checkbox"
+                name="policy"
+                id="policy"
+                class="checkbox-tick visually-hidden"
+                required
+              />
+              <span class="check-back">
+                <svg class="checkbox-icon">
+                  <use href="./images/icons.svg#tick"></use>
+                </svg>
+              </span>
               <span>Погоджуюся з розсилкою та приймаю</span>
               <a href="#" class="checkbox-policy">Умови договору</a>
             </label>
