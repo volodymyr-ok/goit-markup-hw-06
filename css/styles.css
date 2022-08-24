@@ -743,8 +743,29 @@ footer .logo {
   margin-bottom: 9px;
 }
 
-.contact.location {
+.footer-contact.location {
   color: #ffffff;
+}
+
+.footer-contact:focus,
+.footer-contact:hover {
+  color: var(--blue-accent);
+}
+
+.footer-contact {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+
+  color: var(--minor-color);
+  display: flex;
+  align-items: center;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 address .contact {
