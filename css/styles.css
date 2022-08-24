@@ -1027,6 +1027,10 @@ address .contact {
   resize: none;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  transition-property: outline;
+  transition-duration: 250ms;
+  transition-timing-function: var(--transition);
 }
 
 .comment-box:focus {
