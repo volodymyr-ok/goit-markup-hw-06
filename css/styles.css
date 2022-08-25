@@ -1093,14 +1093,6 @@ address .contact {
   margin-bottom: 20px;
 }
 
-::placeholder {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: calc(14 / 12);
-  letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
-}
-
 .comment-box {
   height: 120px;
   padding: 12px 16px;
@@ -1108,10 +1100,25 @@ address .contact {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+
   transition-property: outline;
   transition-duration: 250ms;
   transition-timing-function: var(--transition);
 }
+
+.comment-box::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
 .comment-box:focus {
   outline: 1px solid var(--blue-accent);
 }
